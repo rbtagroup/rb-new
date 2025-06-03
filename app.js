@@ -57,7 +57,8 @@ function calculate() {
 
   const hotovost = trzba - kartou - fakturou;
   const naklady = palivo + myti + pristavne + jine;
-  const denFirma = (trzba * 0.5) - naklady;
+  const ridicCastka = (trzba * 0.5);
+  const denFirma = ridicCastka - naklady;
   const vysledekHTML = `
     <h3>Výčetka pro ${ridic}</h3>
     <ul>
@@ -67,6 +68,7 @@ function calculate() {
       <li><strong>Fakturou:</strong> ${fakturou} Kč</li>
       <li><strong>Hotovost:</strong> ${hotovost} Kč</li>
       <li><strong>Náklady:</strong> ${naklady} Kč</li>
+      <li><strong>Výplata řidiče:</strong> ${ridicCastka} Kč</li>
       <li><strong>Zisk firmy:</strong> ${denFirma} Kč</li>
     </ul>
   `;

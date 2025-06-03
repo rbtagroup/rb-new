@@ -18,14 +18,14 @@
       <i class="ph ph-clipboard-text text-4xl"></i> RB TAXI – Výčetka
     </h1>
     <form id="taxiForm" class="grid grid-cols-1 gap-6">
-      <div class="step" data-step="1">
+      <div class="step border-2 border-transparent rounded-2xl p-4 transition-all duration-300" data-step="1">
         <div class="flex flex-col gap-2">
           <label for="driverName" class="text-base font-semibold">👤 Řidič:</label>
-          <input id="driverName" required type="text" class="input"/>
+          <input id="driverName" required type="text" class="input border-2 border-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 bg-white"/>
         </div>
         <div class="flex flex-col gap-2">
           <label for="typSmeny" class="text-base font-semibold">🕒 Typ směny:</label>
-          <select id="typSmeny" class="input">
+          <select id="typSmeny" class="input border-2 border-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 bg-white">
             <option value="denni">Denní</option>
             <option value="nocni">Noční</option>
             <option value="odpoledni">Odpolední</option>
@@ -35,18 +35,18 @@
       </div>
       <div class="step hidden" data-step="2">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="flex flex-col gap-1"><label for="trzba">💰 Tržba (Kč):</label><input id="trzba" required type="number" min="0" class="input"/></div>
-          <div class="flex flex-col gap-1"><label for="palivo">⛽ Palivo:</label><input id="palivo" type="number" min="0" class="input"/></div>
-          <div class="flex flex-col gap-1"><label for="myti">🧼 Mytí:</label><input id="myti" type="number" min="0" class="input"/></div>
-          <div class="flex flex-col gap-1"><label for="kartou">💳 Kartou:</label><input id="kartou" type="number" min="0" class="input"/></div>
-          <div class="flex flex-col gap-1"><label for="fakturou">🧾 Fakturou:</label><input id="fakturou" type="number" min="0" class="input"/></div>
-          <div class="flex flex-col gap-1"><label for="jine">💸 Jiné platby:</label><input id="jine" type="number" min="0" class="input"/></div>
+          <div class="flex flex-col gap-1"><label for="trzba">💰 Tržba (Kč):</label><input id="trzba" required type="number" min="0" class="input border-2 border-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 bg-white"/></div>
+          <div class="flex flex-col gap-1"><label for="palivo">⛽ Palivo:</label><input id="palivo" type="number" min="0" class="input border-2 border-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 bg-white"/></div>
+          <div class="flex flex-col gap-1"><label for="myti">🧼 Mytí:</label><input id="myti" type="number" min="0" class="input border-2 border-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 bg-white"/></div>
+          <div class="flex flex-col gap-1"><label for="kartou">💳 Kartou:</label><input id="kartou" type="number" min="0" class="input border-2 border-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 bg-white"/></div>
+          <div class="flex flex-col gap-1"><label for="fakturou">🧾 Fakturou:</label><input id="fakturou" type="number" min="0" class="input border-2 border-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 bg-white"/></div>
+          <div class="flex flex-col gap-1"><label for="jine">💸 Jiné platby:</label><input id="jine" type="number" min="0" class="input border-2 border-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 bg-white"/></div>
         </div>
       </div>
       <div class="step hidden" data-step="3">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="flex flex-col gap-1"><label for="km">📏 Najeté km:</label><input id="km" required type="number" min="0" class="input"/></div>
-          <div class="flex flex-col gap-1"><label for="pristavne">🚕 Přístavné:</label><input id="pristavne" type="number" min="0" class="input"/></div>
+          <div class="flex flex-col gap-1"><label for="km">📏 Najeté km:</label><input id="km" required type="number" min="0" class="input border-2 border-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 bg-white"/></div>
+          <div class="flex flex-col gap-1"><label for="pristavne">🚕 Přístavné:</label><input id="pristavne" type="number" min="0" class="input border-2 border-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 bg-white"/></div>
         </div>
       </div>
       <div class="flex justify-between pt-4">
