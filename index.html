@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RB TAXI – Výčetka</title>
+  <link href="manifest.json" rel="manifest"/>
+  <link href="apple-touch-icon.png" rel="apple-touch-icon">
+  <meta content="#FFD700" name="theme-color"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-gradient-to-br from-yellow-100 via-yellow-50 to-white text-gray-900">
+<main class="max-w-2xl mx-auto px-4 py-10 space-y-8">
+  <section class="bg-white shadow-2xl rounded-3xl p-8 space-y-6 animate-fade-in">
+    <h1 class="text-3xl font-extrabold flex items-center gap-3 text-yellow-600">
+      <i class="ph ph-clipboard-text text-4xl"></i> RB TAXI – Výčetka
+    </h1>
+    <form id="taxiForm" class="grid grid-cols-1 gap-6">
+      <div class="step" data-step="1">
+        <div class="flex flex-col gap-2">
+          <label for="driverName" class="text-base font-semibold">👤 Řidič:</label>
+          <input id="driverName" required type="text" class="input"/>
+        </div>
+        <div class="flex flex-col gap-2">
+          <label for="typSmeny" class="text-base font-semibold">🕒 Typ směny:</label>
+          <select id="typSmeny" class="input">
+            <option value="denni">Denní</option>
+            <option value="nocni">Noční</option>
+            <option value="odpoledni">Odpolední</option>
+            <option value="pul">½ směna</option>
+          </select>
+        </div>
+      </div>
+      <div class="step hidden" data-step="2">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex flex-col gap-1"><label for="trzba">💰 Tržba (Kč):</label><input id="trzba" required type="number" min="0" class="input"/></div>
+          <div class="flex flex-col gap-1"><label for="palivo">⛽ Palivo:</label><input id="palivo" type="number" min="0" class="input"/></div>
+          <div class="flex flex-col gap-1"><label for="myti">🧼 Mytí:</label><input id="myti" type="number" min="0" class="input"/></div>
+          <div class="flex flex-col gap-1"><label for="kartou">💳 Kartou:</label><input id="kartou" type="number" min="0" class="input"/></div>
+          <div class="flex flex-col gap-1"><label for="fakturou">🧾 Fakturou:</label><input id="fakturou" type="number" min="0" class="input"/></div>
+          <div class="flex flex-col gap-1"><label for="jine">💸 Jiné platby:</label><input id="jine" type="number" min="0" class="input"/></div>
+        </div>
+      </div>
+      <div class="step hidden" data-step="3">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex flex-col gap-1"><label for="km">📏 Najeté km:</label><input id="km" required type="number" min="0" class="input"/></div>
+          <div class="flex flex-col gap-1"><label for="pristavne">🚕 Přístavné:</label><input id="pristavne" type="number" min="0" class="input"/></div>
+        </div>
+      </div>
+      <div class="flex justify-between pt-4">
+        <button type="button" class="btn" id="prevStep">Zpět</button>
+        <button type="button" class="btn bg-yellow-500 hover:bg-yellow-600" id="nextStep">Další</button>
+        <button type="submit" class="btn bg-green-600 hover:bg-green-700 hidden" id="submitBtn">Spočítat</button>
+      </div>
+    </form>
+  </section>
+  <section class="hidden bg-white shadow-xl rounded-3xl p-8 animate-fade-in" id="output-section">
+    <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+      <i class="ph ph-clipboard-check text-green-600 text-3xl"></i> Výpočet</h2>
+    <div id="outputBox" class="prose"></div>
+    <div class="mt-6 flex flex-wrap gap-4">
+      <button onclick="newShift()" class="btn">Nová směna</button>
+      <button onclick="downloadPDF()" class="btn">Export PDF</button>
+      <button onclick="shareResult()" class="btn">Sdílet</button>
+    </div>
+  </section>
+</main>
+<style>
+.input {@apply w-full border border-yellow-300 rounded-2xl px-4 py-2 shadow-md focus:ring-yellow-400 focus:border-yellow-500 outline-none transition;}
+.btn {@apply bg-gray-800 text-white px-4 py-2 rounded-xl hover:bg-gray-900 transition shadow-md;}
+.animate-fade-in {animation: fadeIn 0.6s ease-in-out;}
+@keyframes fadeIn {from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); }}
+</style>
+<script src="app.js" defer></script>
+</body>
+</html>
